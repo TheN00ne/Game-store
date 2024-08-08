@@ -1,0 +1,229 @@
+@use '../main' as main;
+
+*{
+    font-family: "Comfortaa", sans-serif;
+}
+
+body{
+    margin: 0;
+    background-color: main.$themeBgCol;
+}
+
+.staticBody{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+header, footer{
+    background-color: main.$sndCol;
+    color: main.$themeCol;
+    text-align: center;
+    padding: 10px;
+}
+
+nav{
+    text-align: center;
+
+    .link{
+        @include main.pill-btn();
+        text-decoration: none;
+    }
+    
+    .active{
+        background-color: main.$themeCol;
+        color: main.$sndCol;
+        border-color: main.$sndCol;
+
+        &:hover{
+            box-shadow: 0 0 0 0;
+        }
+    }
+}
+
+main{
+    margin: 20px;
+}
+
+.menu{
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    width: 35px;
+    height: 35px;
+    fill: main.$sndCol;
+    border: 2px solid main.$sndCol;
+    border-radius: 3px;
+    z-index: 999;
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 0.2s;
+
+    &:hover{
+        fill: main.$trdCol;
+        border-color: main.$trdCol;;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+    .menuBlock{
+        position: fixed;
+        top: 100px;
+        width: 50%;
+        height: 450px;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 10px;
+        color: main.$themeCol;
+        background-color: main.$sndBgCol;
+        border: 3px solid main.$sndCol;
+        border-radius: 20px;
+        opacity: 0.9;
+    
+        .closeMenu{
+            @include main.crcl-btn(15px, 5px, main.$sndCol, main.$themeCol);
+            position: absolute;
+            right: 2px;
+        }
+    
+        h2{
+            text-align: center
+        }
+        
+        .logout{
+            @include main.pill-btn();
+            float: right;
+    
+            &:hover{
+                transform: scale(1.05);
+                filter: grayscale(30%);
+            }
+        }
+    
+        .theme{
+            position: relative;
+            @include main.pill-btn();
+            width: 40px;
+            height: 12px;
+    
+    
+            .themeCircle{
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                transition-duration: 0.5s;
+    
+                .spotOne{
+                    position: relative;
+                    left: 1.5px;
+                    top: 1px;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50% 50% 30% 50%;
+                    background-color: gray;
+                }
+                
+                .spotTwo{
+                    position: relative;
+                    left: 7px;
+                    width: 2.5px;
+                    height: 3px;
+                    border-radius: 30% 50% 00% 50%;
+                    background-color: gray;
+                }
+    
+                .spotThree{
+                    position: relative;
+                    left: 3px;
+                    top: -1px;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 50% 30% 00% 50%;
+                    background-color: gray;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 2560px) {
+    .menuBlock{
+        position: fixed;
+        top: 100px;
+        right: 10px;
+        width: 270px;
+        height: 450px;
+        padding: 10px;
+        color: main.$themeCol;
+        background-color: main.$sndBgCol;
+        border: 3px solid main.$sndCol;
+        border-radius: 20px;
+        opacity: 0.9;
+    
+        .closeMenu{
+            @include main.crcl-btn(15px, 5px, main.$sndCol, main.$themeCol);
+            position: absolute;
+            right: 2px;
+        }
+    
+        h2{
+            text-align: center
+        }
+        
+        .logout{
+            @include main.pill-btn();
+            float: right;
+    
+            &:hover{
+                transform: scale(1.05);
+                filter: grayscale(30%);
+            }
+        }
+    
+        .theme{
+            position: relative;
+            @include main.pill-btn();
+            width: 40px;
+            height: 12px;
+    
+    
+            .themeCircle{
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                transition-duration: 0.5s;
+    
+                .spotOne{
+                    position: relative;
+                    left: 1.5px;
+                    top: 1px;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50% 50% 30% 50%;
+                    background-color: gray;
+                }
+                
+                .spotTwo{
+                    position: relative;
+                    left: 7px;
+                    width: 2.5px;
+                    height: 3px;
+                    border-radius: 30% 50% 00% 50%;
+                    background-color: gray;
+                }
+    
+                .spotThree{
+                    position: relative;
+                    left: 3px;
+                    top: -1px;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 50% 30% 00% 50%;
+                    background-color: gray;
+                }
+            }
+        }
+    }
+}

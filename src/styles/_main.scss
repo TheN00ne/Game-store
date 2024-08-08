@@ -1,0 +1,92 @@
+$themeCol:white;
+$sndCol:black;
+$trdCol: #4c02f8;
+
+$themeBgCol:#d4d4df;
+$sndBgCol:#080319;
+$trdBgCol: #f84402;
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poetsen+One&display=swap');
+
+*{
+    font-family: "Comfortaa", sans-serif;
+}
+
+@mixin pill-btn(){
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    margin: 5px;
+    color: $themeCol;
+    background-color: $sndCol;
+    border: 1px solid $themeCol;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover{
+        box-shadow: 0px 0px 10px $trdCol;
+    }
+}
+
+@mixin crcl-btn($fs, $p, $BGCol, $col){
+    display: inline-block;
+    width: $fs;
+    height: $fs;
+    padding: $p;
+    margin: 2px;
+    color: $col;
+    background-color: $BGCol;
+    border: 1px solid $col;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-size: $fs;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: 0px 0px 10px $trdCol;
+        transform: scale(1.05);
+    }
+}
+
+@mixin arrow-btn($BGCol, $col) {
+    display: inline-block;
+    padding: 8px;
+    color: $col;
+    background-color: $BGCol;
+    border: 2px solid $col;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+@mixin pill($p, $m, $fs, $GBCol, $col){
+    display: inline-block;
+    height: auto;
+    padding: $p;
+    margin: $m;
+    color: $col;
+    background-color: $GBCol;
+    border: 1px solid $col;
+    border-radius: 10px;
+    text-align: center;
+    font-size: $fs;
+    transition-duration: 0.5s;
+}
+
+@mixin search(){
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 16px;
+}

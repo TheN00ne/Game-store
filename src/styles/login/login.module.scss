@@ -1,0 +1,198 @@
+@use '../main' as main;
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+
+        .signBlock{
+            position: fixed;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 10px;
+            justify-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .up, .in{
+            width: 50%;
+            height: 20px;
+            color: blue;
+            background-color: white;
+            border: 2px solid blue;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        
+            &:hover{
+                transform: scale(1.05);
+                filter: grayscale(30%);
+            }
+        }
+        
+        .upChose, .inChose{
+            width: 50%;
+            height: 20px;
+            color: #202071;
+            background-color: white;
+            border: 2px solid #202071;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        
+            &:hover{
+                transform: scale(1.05);
+                filter: grayscale(30%);
+            }
+        }
+    
+        form{
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            background-color: #e3def1;
+            border: 2px solid black;
+            padding: 20px;
+    
+            legend{
+                font-weight: bold;
+                font-size: 25px;
+                text-align: center;
+                align-self: center;
+            }
+    
+            .inpustBlock{
+                display: grid;
+                margin-top: 20px;
+                justify-items: center;
+            }
+            
+            input{
+                border-radius: 10px;
+                margin: 10px;
+                margin-top: 20px;
+                height: 20px;
+                width: 75%;
+            }
+    
+            button{
+                @include main.pill-btn();
+                color: main.$sndCol;
+                background-color: main.$themeCol;
+                border-color: main.$sndCol;
+                width: fit-content;
+                padding: {
+                    left: 15px;
+                    right: 15px;
+                };
+                justify-self: end;
+                align-self: center;
+                cursor: pointer;
+            }
+        }
+    }
+
+@media screen and (min-width: 769px) and (max-width: 2560px) {
+    .loginPage{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        height: 100vh;
+        
+        .signBlock{
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 10px;
+            justify-items: center;
+            width: 25vw;
+        }
+        
+        .up, .in{
+            width: 100%;
+            height: 20px;
+            color: blue;
+            background-color: white;
+            border: 2px solid blue;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        
+            &:hover{
+                transform: scale(1.05);
+                filter: grayscale(30%);
+            }
+        }
+        
+        .upChose, .inChose{
+            width: 100%;
+            height: 20px;
+            color: #202071;
+            background-color: white;
+            border: 2px solid #202071;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        
+            &:hover{
+                transform: scale(1.05);
+                filter: grayscale(30%);
+            }
+        }
+    
+        form{
+            box-sizing: border-box;
+            display: grid;
+            height: 60vh;
+            background-color: #e3def1;
+            border: 2px solid black;
+            border-radius: 20px;
+            padding: 20px;
+    
+            legend{
+                font-weight: bold;
+                font-size: 25px;
+                text-align: center;
+                align-self: center;
+            }
+    
+            .inpustBlock{
+                display: grid;
+                margin-top: 20px;
+                justify-items: center;
+            }
+            
+            input{
+                border-radius: 10px;
+                margin: 10px;
+                margin-top: 20px;
+                height: 20px;
+                width: 75%;
+            }
+    
+            button{
+                @include main.pill-btn();
+                color: main.$sndCol;
+                background-color: main.$themeCol;
+                border-color: main.$sndCol;
+                width: fit-content;
+                padding: {
+                    left: 15px;
+                    right: 15px;
+                };
+                justify-self: end;
+                align-self: center;
+                cursor: pointer;
+            }
+        }
+    }
+}

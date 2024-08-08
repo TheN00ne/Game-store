@@ -1,0 +1,232 @@
+@use '../main' as main;
+
+@media screen and (min-width: 200px) and (max-width: 769px) {
+    .background{
+        display: grid;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 90%;
+    }
+    
+    .block{
+        justify-self: center;
+        align-self: center;
+        width: 100vw;
+        height: 80vh;
+        background-color: main.$themeCol;
+        border: 2px solid main.$sndCol;
+    
+        form{
+
+            display: grid;
+            justify-items: center;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+    
+            legend{
+                margin: 10px;
+                font-size: 24px;
+                text-align: center;
+                font-weight: bold;
+            }
+    
+            .price{
+                @include main.pill(3px, 5px, 16px, main.$sndCol, main.$themeCol);
+                padding: 10px;
+            }
+    
+            .cond{
+                width: 70%;
+                margin: 10px;
+                padding: 5px;
+                border: 2px solid black;
+                border-radius: 10px;
+                height: 100px;
+                overflow: auto;
+    
+                h2, p{
+                    text-align: center;
+                }
+            }
+    
+            .card{
+                @include main.pill(3px, 5px, 16px, main.$sndCol, main.$themeCol);
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-items: center;
+                align-items: center;
+    
+                input{
+                    width: 80px;
+                    padding: 3px;
+                    margin: 1px;
+                    margin-left: 10px;
+    
+                    &::placeholder{
+                        font-size: 8px;
+                        font-weight: bold;
+                        color: black;
+                    }
+                }
+            }
+    
+            .accept{
+                @include main.pill(3px, 5px, 16px, main.$sndCol, main.$themeCol);
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-items: center;
+                align-items: center;
+    
+                input{
+                    cursor: pointer;
+                }
+            }
+    
+            .btnOpen{
+                @include main.pill-btn();
+                padding: {
+                    left: 30px;
+                    right: 30px;
+                }
+                float: right;
+            }
+    
+            .btnClose{
+                @include main.pill-btn();
+                color: main.$sndCol;
+                background-color: main.$themeCol;
+                border: 1px solid main.$sndCol;
+                padding: {
+                    left: 30px;
+                    right: 30px;
+                }
+                float: right;
+            }
+        }
+    
+        
+    }
+    
+    .cross{
+        @include main.crcl-btn(20px, 5px, main.$sndCol, main.$themeCol);
+    
+        position: fixed;
+        text-align: center;
+        margin: 5px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 2560px) {
+    .background{
+        display: grid;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 90%;
+    }
+    
+    .block{
+        justify-self: center;
+        align-self: center;
+        width: 30vw;
+        height: 80vh;
+        background-color: main.$themeCol;
+        border: 2px solid main.$sndCol;
+        padding: 10px;
+    
+        form{
+    
+            legend{
+                margin: 10px;
+                font-size: 24px;
+                text-align: center;
+                font-weight: bold;
+            }
+    
+            .price{
+                @include main.pill(3px, 5px, 16px, main.$sndCol, main.$themeCol);
+                padding: 4px;
+            }
+    
+            .cond{
+                margin: 10px;
+                padding: 5px;
+                border: 2px solid black;
+                border-radius: 10px;
+                height: 100px;
+                overflow: auto;
+    
+                h2, p{
+                    text-align: center;
+                }
+            }
+    
+            .card{
+                @include main.pill(3px, 5px, 16px, main.$sndCol, main.$themeCol);
+    
+                input{
+                    width: 80px;
+                    padding: 3px;
+                    margin: 1px;
+                    margin-left: 10px;
+    
+                    &::placeholder{
+                        font-size: 8px;
+                        font-weight: bold;
+                        color: black;
+                    }
+                }
+            }
+    
+            .accept{
+                @include main.pill(3px, 5px, 16px, main.$sndCol, main.$themeCol);
+                padding: 4px;
+    
+                input{
+                    cursor: pointer;
+                }
+            }
+    
+            .btnOpen{
+                @include main.pill-btn();
+                padding: {
+                    left: 30px;
+                    right: 30px;
+                }
+                float: right;
+            }
+    
+            .btnClose{
+                @include main.pill-btn();
+                color: main.$sndCol;
+                background-color: main.$themeCol;
+                border: 1px solid main.$sndCol;
+                padding: {
+                    left: 30px;
+                    right: 30px;
+                }
+                float: right;
+            }
+        }
+    
+        
+    }
+    
+    .cross{
+        @include main.crcl-btn(20px, 5px, main.$sndCol, main.$themeCol);
+    
+        float: right;
+        text-align: center;
+        margin: 5px;
+        font-size: 18px;
+    }
+}

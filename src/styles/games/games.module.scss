@@ -1,0 +1,554 @@
+@use '../main' as main;
+
+.searchPost{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.search{
+   @include main.search();
+}
+
+.post{
+    @include main.arrow-btn(main.$themeCol, main.$sndCol);
+    justify-self: center;
+    align-self: center;
+}
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+    .searchBlock{
+        display: grid;
+        justify-content: center;
+        margin: 15px;    
+    
+        details{
+            text-align: center;
+            summary{
+                @include main.pill(7px, 5px, 18px, main.$sndCol, main.$themeCol);
+                cursor: pointer;
+    
+                &::marker{
+                    content: none;
+                }
+    
+                &:hover{
+                    box-shadow: 0px 0px 10px main.$trdCol;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .ganres{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; 
+        row-gap: 5px;
+        column-gap: 5px;
+    }
+    
+    .ganre, .chosenGanre{
+        cursor: pointer;
+        user-select: none;
+        
+        &:hover{
+            color: main.$sndCol;
+            background-color: main.$themeCol;
+            border: 2px solid main.$sndCol;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px main.$trdCol;
+        }
+    
+        &:active{
+            transition-duration: 0.1s;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px main.$trdCol;
+        }
+    }
+    
+    .ganre{
+        @include main.pill(3px, 0, 16px, main.$sndCol, main.$themeCol);
+    }
+    
+    .chosenGanre{
+        @include main.pill(3px, 0, 16px, main.$themeCol, main.$sndCol);
+    }
+    
+    .gameBlock{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 20px;
+    
+        .game{
+            display: grid;
+            justify-self: center;
+            width: auto;
+            min-width: 360px;
+            max-height: 400px;
+            color: main.$sndCol;
+            border:2px solid main.$sndCol;
+            background-color: main.$themeCol;
+            text-align: center;
+            cursor: pointer;
+            transition-duration: 0.25s;
+    
+            &:hover{
+                filter: grayscale(50%);
+                transform: scale(1.05);
+                box-shadow: 0 0 50px main.$trdCol;
+            }
+    
+            .mark{
+                @include main.crcl-btn(15px, 5px, main.$themeCol, main.$trdCol);
+                position: absolute;
+                font-family: monospace;
+                justify-self: end;
+    
+                &:hover{
+                    transform: scale(1.05);
+                    color: main.$sndCol;
+                }
+            }
+    
+            .imgBlock{
+                display: grid; 
+                height: 200px;
+                width: 100%;
+                background-color: black;
+                
+                img{
+                    align-self: center;
+                    max-height: 200px;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+    
+    
+            h2{
+                font-size: 25px;
+                padding: 10px;
+                text-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .infoBlock{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-items: center;
+                align-self: end;
+                margin: 10px;
+            }
+    
+            .rate, .price{
+                @include main.pill(5px, 2px, 14px, main.$sndCol, main.$themeCol);
+                width: auto;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .searchBlock{
+        display: grid;
+        justify-content: center;
+        margin: 15px;    
+    
+        details{
+            text-align: center;
+            summary{
+                @include main.pill(7px, 5px, 18px, main.$sndCol, main.$themeCol);
+                cursor: pointer;
+    
+                &::marker{
+                    content: none;
+                }
+    
+                &:hover{
+                    box-shadow: 0px 0px 10px main.$trdCol;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .ganres{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; 
+        row-gap: 5px;
+        column-gap: 5px;
+    }
+    
+    .ganre, .chosenGanre{
+        cursor: pointer;
+        user-select: none;
+        
+        &:hover{
+            color: main.$sndCol;
+            background-color: main.$themeCol;
+            border: 2px solid main.$sndCol;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px main.$trdCol;
+        }
+    
+        &:active{
+            transition-duration: 0.1s;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px main.$trdCol;
+        }
+    }
+    
+    .ganre{
+        @include main.pill(3px, 0, 16px, main.$sndCol, main.$themeCol);
+    }
+    
+    .chosenGanre{
+        @include main.pill(3px, 0, 16px, main.$themeCol, main.$sndCol);
+    }
+    
+    .gameBlock{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 20px;
+        column-gap: 20px;
+    
+        .game{
+            display: grid;
+            justify-self: center;
+            width: auto;
+            min-width: 360px;
+            max-height: 400px;
+            color: main.$sndCol;
+            border:2px solid main.$sndCol;
+            background-color: main.$themeCol;
+            text-align: center;
+            cursor: pointer;
+            transition-duration: 0.25s;
+    
+            &:hover{
+                filter: grayscale(50%);
+                transform: scale(1.05);
+                box-shadow: 0 0 50px main.$trdCol;
+            }
+    
+            .mark{
+                @include main.crcl-btn(15px, 5px, main.$themeCol, main.$trdCol);
+                position: absolute;
+                font-family: monospace;
+                justify-self: end;
+    
+                &:hover{
+                    transform: scale(1.05);
+                    color: main.$sndCol;
+                }
+            }
+    
+            .imgBlock{
+                display: grid; 
+                height: 200px;
+                width: 100%;
+                background-color: black;
+                
+                img{
+                    align-self: center;
+                    max-height: 200px;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+    
+    
+            h2{
+                font-size: 25px;
+                padding: 10px;
+                text-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .infoBlock{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-items: center;
+                align-self: end;
+                margin: 10px;
+            }
+    
+            .rate, .price{
+                @include main.pill(5px, 2px, 14px, main.$sndCol, main.$themeCol);
+                width: auto;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .searchBlock{
+        display: grid;
+        justify-content: center;
+        margin: 15px;
+    
+    
+        details{
+            text-align: center;
+            summary{
+                @include main.pill(7px, 5px, 18px, main.$sndCol, main.$themeCol);
+                cursor: pointer;
+    
+                &::marker{
+                    content: none;
+                }
+    
+                &:hover{
+                    box-shadow: 0px 0px 10px main.$trdCol;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+    
+    .ganres{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; 
+        row-gap: 5px;
+        column-gap: 5px;
+    }
+    
+    .ganre, .chosenGanre{
+        cursor: pointer;
+        user-select: none;
+        
+        &:hover{
+            color: main.$sndCol;
+            background-color: main.$themeCol;
+            border: 2px solid main.$sndCol;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px main.$trdCol;
+        }
+    
+        &:active{
+            transition-duration: 0.1s;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px main.$trdCol;
+        }
+    }
+    
+    .ganre{
+        @include main.pill(3px, 0, 16px, main.$sndCol, main.$themeCol);
+    }
+    
+    .chosenGanre{
+        @include main.pill(3px, 0, 16px, main.$themeCol, main.$sndCol);
+    }
+    
+    .gameBlock{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 20px;
+        column-gap:20px;
+    
+        .game{
+            display: grid;
+            max-height: 400px;
+            color: main.$sndCol;
+            border:2px solid main.$sndCol;
+            background-color: main.$themeCol;
+            text-align: center;
+            cursor: pointer;
+            transition-duration: 0.25s;
+    
+            &:hover{
+                filter: grayscale(50%);
+                transform: scale(1.05);
+                box-shadow: 0 0 50px main.$trdCol;
+            }
+    
+            .mark{
+                @include main.crcl-btn(15px, 5px, main.$themeCol, main.$trdCol);
+                position: absolute;
+                font-family: monospace;
+                justify-self: end;
+    
+                &:hover{
+                    transform: scale(1.05);
+                    color: main.$sndCol;
+                }
+            }
+    
+            .imgBlock{
+                display: grid; 
+                height: 200px;
+                width: 100%;
+                background-color: black;
+                
+                img{
+                    align-self: center;
+                    max-height: 200px;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+    
+    
+            h2{
+                font-size: 25px;
+                padding: 10px;
+                text-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .infoBlock{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-items: center;
+                align-self: end;
+                margin: 10px;
+            }
+    
+            .rate, .price{
+                @include main.pill(5px, 2px, 14px, main.$sndCol, main.$themeCol);
+                width: auto;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+    .searchBlock{
+        display: grid;
+        justify-content: center;
+        margin: 15px;
+    
+        details{
+            text-align: center;
+            summary{
+                @include main.pill(7px, 5px, 25px, main.$sndCol, main.$themeCol);
+                cursor: pointer;
+    
+                &::marker{
+                    content: none;
+                }
+    
+                &:hover{
+                    box-shadow: 0px 0px 10px main.$trdCol;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+    
+    .ganres{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; 
+        row-gap: 5px;
+        column-gap: 5px;
+    }
+    
+    .ganre, .chosenGanre{
+        cursor: pointer;
+        user-select: none;
+        
+        &:hover{
+            color: main.$sndCol;
+            background-color: main.$themeCol;
+            border: 2px solid main.$sndCol;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px main.$trdCol;
+        }
+    
+        &:active{
+            transition-duration: 0.1s;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px main.$trdCol;
+        }
+    }
+    
+    .ganre{
+        @include main.pill(5px, 0, 20px, main.$sndCol, main.$themeCol);
+    }
+    
+    .chosenGanre{
+        @include main.pill(5px, 0, 20px, main.$themeCol, main.$sndCol);
+    }
+    
+    .gameBlock{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        row-gap: 20px;
+        column-gap:20px;
+    
+        .game{
+            display: grid;
+            max-height: 400px;
+            color: main.$sndCol;
+            border:2px solid main.$sndCol;
+            background-color: main.$themeCol;
+            text-align: center;
+            cursor: pointer;
+            transition-duration: 0.25s;
+    
+            &:hover{
+                filter: grayscale(50%);
+                transform: scale(1.05);
+                box-shadow: 0 0 50px main.$trdCol;
+            }
+    
+            .mark{
+                @include main.crcl-btn(20px, 5px, main.$themeCol, main.$trdCol);
+                position: absolute;
+                font-family: monospace;
+                justify-self: end;
+    
+                &:hover{
+                    transform: scale(1.05);
+                    color: main.$sndCol;
+                }
+            }
+    
+            .imgBlock{
+                display: grid; 
+                height: 200px;
+                width: 100%;
+                background-color: black;
+                
+                img{
+                    align-self: center;
+                    max-height: 200px;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+    
+    
+            h2{
+                font-size: 25px;
+                padding: 10px;
+                text-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            .infoBlock{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-items: center;
+                align-self: end;
+                margin: 10px;
+            }
+    
+            .rate, .price{
+                @include main.pill(10px, 2px, 20px, main.$sndCol, main.$themeCol);
+                width: auto;
+                justify-self: center;
+            }
+        }
+    }
+}

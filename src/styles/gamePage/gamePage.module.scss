@@ -1,0 +1,768 @@
+@use '../main' as main;
+
+.gamePage{
+    display: grid;
+    justify-items: center;
+}
+
+.asideHead{
+    margin: 10px;
+}
+
+.centerHead{
+    text-align: center;
+    margin: 10px;
+}
+
+@media screen and (min-width: 200px) and (max-width: 768px){
+
+    .gameBlock{
+        width: 85%;
+        border: 3px solid main.$sndCol;
+        padding-bottom: 20px;
+        
+        .gameInfo{
+            display: grid;
+            grid-template-rows: 200px auto;
+            grid-template-columns: 75% 25%;
+        }
+        
+        .imgBlock{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: 3px solid main.$sndCol;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    
+        .moveArrow{
+            @include main.crcl-btn(18px, 5px, main.$themeCol, main.$sndCol);
+            cursor: pointer;
+            user-select: none;
+        }
+    
+        .moveForward{
+            justify-self: end;
+        }
+        
+        .imgsBar{
+            height: auto;
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+        }
+        
+        .miniImg{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: 3px solid main.$sndCol;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .title{
+            grid-column: 1 / 3;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .describe{
+            margin: 20px;
+        }
+        
+        .ganres{
+            text-align: center;
+    
+            .ganre{
+                @include main.pill(0px, 5px, 16px, main.$sndCol, main.$themeCol);
+                border-radius: 5px;
+                padding: {
+                    top: 1px;
+                    bottom: 1px;
+                    left: 10px;
+                    right: 10px;
+                }
+            }
+        }  
+        
+        .rateBlock{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+    
+            .rateMark{
+                display: inline-block;
+                width: 100%;
+                color: gold;
+                text-align: center;
+                font-size: 20px;
+            }
+    
+            .rateCount{
+                display: block;
+                text-align: center;
+            }
+        }
+    
+        .star{
+            color:gold;
+            font-size: 18px;
+        }
+    
+        .rate{
+            display: grid;
+            grid-template-columns: 100%;
+            justify-items: center;
+            
+            svg{
+                cursor: pointer;
+                margin: 3px;
+            }
+        }
+    
+    
+        .priceBlock{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:25%;
+            margin: 20px;
+            justify-items: center;
+            
+            .price, .buy{
+                @include main.pill(10px, 0px, auto, main.$sndCol, main.$themeCol);
+                font-weight: bold;
+            }
+    
+            .buy{
+                padding: {
+                    left: 30px;
+                    right: 30px;
+                }
+                transition-duration: 0.5s;
+                cursor: pointer;
+            }
+    
+            .buy:hover{
+                background-color: main.$themeCol;
+                border: 1px solid main.$sndCol;
+                color: main.$sndCol;
+                box-shadow: 0px 0px 10px main.$trdCol;
+            }
+        }
+    
+        .authorsBlock{
+            display: grid;
+            grid-template-columns:1fr 10fr 1fr;
+            align-items: center;
+
+            .authors{
+                display: grid;
+                grid-template-columns: repeat(4, 25%);
+                width: 100%;
+                justify-items: center;
+                
+                .author{
+                    display: grid;
+                    text-overflow: ellipsis;
+                    border: 2px solid main.$sndCol;
+                    background-color: main.$themeCol;
+                    color: main.$sndCol;
+                    cursor: pointer;
+                    width: 90%;
+                    height: 200px;
+
+                    h2, p{
+                        width: 100%;
+                        margin: 0;
+                        margin-top: 5px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+    
+                    &:hover{
+                        filter: grayscale(50%);
+                        transform: scale(1.05);
+                        box-shadow: 0 0 50px main.$trdCol;
+                    }
+                    
+                    .imgDiv{
+                        display: none;
+                        width: 100%;
+                        height: 50px;
+                        display: grid;
+                        align-self: end;
+                        
+                        img{
+                            display: none;
+                            align-self: center;
+                            max-height: 100px;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .write{
+            @include main.search();
+            width: 50%;
+            height: 20px;
+        }
+    
+        .post{
+            @include main.arrow-btn(main.$themeCol, main.$sndCol);
+        }
+    
+        .closePost{
+            @include main.arrow-btn(main.$sndCol, main.$themeCol);
+        }
+    
+        .commentBlock{
+    
+            h3{
+                margin: 10px;
+            }
+    
+            .comment{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr auto;
+                width: 70%;
+                margin-left: 45px;
+                border: 3px solid main.$sndCol;
+                border-radius: 0px 20px 20px 20px;
+                background-color: main.$themeCol;
+        
+                .cont{
+                    grid-column: 1/3;
+                }
+        
+                .like, .hate{
+                    @include main.arrow-btn(main.$sndCol, main.$themeCol);
+                    justify-self: center;
+                    width: 35px;
+                    padding: 3px;
+                    text-align: center;
+                    user-select: none;
+        
+                    &:hover{
+                        @include main.arrow-btn(main.$themeCol, main.$sndCol);
+                        padding: 2px;
+                        box-shadow: 0px 0px 10px main.$trdCol;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1023px){
+
+    .gameBlock{
+        width: 85%;
+        border: 3px solid main.$sndCol;
+        padding-bottom: 20px;
+        
+        .gameInfo{
+            display: grid;
+            grid-template-rows: 250px auto;
+            grid-template-columns: 75% 25%;
+        }
+        
+        .imgBlock{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            border: 3px solid main.$sndCol;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+    
+        .moveArrow{
+            @include main.crcl-btn(18px, 5px, main.$themeCol, main.$sndCol);
+            cursor: pointer;
+            user-select: none;
+        }
+    
+        .moveForward{
+            justify-self: end;
+        }
+        
+        .imgsBar{
+            height: auto;
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+        }
+        
+        .miniImg{
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: 3px solid main.$sndCol;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .title{
+            grid-column: 1 / 3;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .describe{
+            margin: 20px;
+        }
+        
+        .ganres{
+            text-align: center;
+    
+            .ganre{
+                @include main.pill(0px, 5px, 16px, main.$sndCol, main.$themeCol);
+                border-radius: 5px;
+                padding: {
+                    top: 1px;
+                    bottom: 1px;
+                    left: 10px;
+                    right: 10px;
+                }
+            }
+        }  
+        
+        .rateBlock{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+    
+            .rateMark{
+                display: inline-block;
+                width: 100%;
+                color: gold;
+                text-align: center;
+                font-size: 20px;
+            }
+    
+            .rateCount{
+                display: block;
+                text-align: center;
+            }
+        }
+    
+        .star{
+            color:gold;
+            font-size: 18px;
+        }
+    
+        .rate{
+            display: grid;
+            grid-template-columns: 100%;
+            justify-items: center;
+            
+            svg{
+                cursor: pointer;
+                margin: 3px;
+            }
+        }
+    
+    
+        .priceBlock{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap:25%;
+            margin: 20px;
+            justify-items: center;
+            
+            .price, .buy{
+                @include main.pill(10px, 0px, auto, main.$sndCol, main.$themeCol);
+                font-weight: bold;
+            }
+    
+            .buy{
+                padding: {
+                    left: 30px;
+                    right: 30px;
+                }
+                transition-duration: 0.5s;
+                cursor: pointer;
+            }
+    
+            .buy:hover{
+                background-color: main.$themeCol;
+                border: 1px solid main.$sndCol;
+                color: main.$sndCol;
+                box-shadow: 0px 0px 10px main.$trdCol;
+            }
+        }
+    
+        .authorsBlock{
+            display: grid;
+            grid-template-columns:1fr 10fr 1fr;
+            align-items: center;
+
+            .authors{
+                display: grid;
+                grid-template-columns: repeat(4, 25%);
+                width: 100%;
+                justify-items: center;
+                
+                .author{
+                    display: grid;
+                    text-overflow: ellipsis;
+                    border: 2px solid main.$sndCol;
+                    background-color: main.$themeCol;
+                    color: main.$sndCol;
+                    cursor: pointer;
+                    width: 90%;
+                    height: 250px;
+
+                    h2, p{
+                        width: 100%;
+                        margin: 0;
+                        margin-top: 5px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+    
+                    &:hover{
+                        filter: grayscale(50%);
+                        transform: scale(1.05);
+                        box-shadow: 0 0 50px main.$trdCol;
+                    }
+                    
+                    .imgDiv{
+                        width: 100%;
+                        display: grid;
+                        align-self: end;
+                        background-color: black;
+                        height: 100px;
+                        
+                        img{
+                            align-self: center;
+                            max-height: 100px;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    
+        .write{
+            @include main.search();
+            width: 40%;
+            height: 20px;
+        }
+    
+        .post{
+            @include main.arrow-btn(main.$themeCol, main.$sndCol);
+        }
+    
+        .closePost{
+            @include main.arrow-btn(main.$sndCol, main.$themeCol);
+        }
+    
+        .commentBlock{
+    
+            h3{
+                margin: 10px;
+            }
+    
+            .comment{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr auto;
+                width: 40%;
+                padding: 5px;
+                margin-left: 45px;
+                border: 3px solid main.$sndCol;
+                border-radius: 0px 20px 20px 20px;
+                background-color: main.$themeCol;
+        
+                .cont{
+                    grid-column: 1/3;
+                }
+        
+                .like, .hate{
+                    @include main.arrow-btn(main.$sndCol, main.$themeCol);
+                    justify-self: center;
+                    width: 35px;
+                    padding: 3px;
+                    text-align: center;
+                    user-select: none;
+        
+                    &:hover{
+                        @include main.arrow-btn(main.$themeCol, main.$sndCol);
+                        padding: 2px;
+                        box-shadow: 0px 0px 10px main.$trdCol;
+                    }
+                }
+            }
+        }
+    
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 2560px){
+
+.gameBlock{
+    width: 55%;
+    border: 3px solid main.$sndCol;
+    padding-bottom: 20px;
+    
+    .asideHead{
+        margin: 10px;
+    }
+    
+    .centerHead{
+        text-align: center;
+        margin: 10px;
+    }
+
+    .gameInfo{
+        display: grid;
+        grid-template-rows: 400px auto;
+        grid-template-columns: 75% 25%;
+    }
+    
+    .imgBlock{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border: 3px solid main.$sndCol;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .moveArrow{
+        @include main.crcl-btn(18px, 5px, main.$themeCol, main.$sndCol);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .moveForward{
+        justify-self: end;
+    }
+    
+    .imgsBar{
+        height: auto;
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    
+    .miniImg{
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        border: 3px solid main.$sndCol;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .title{
+        grid-column: 1 / 3;
+        text-align: center;
+        margin: 10px;
+    }
+    
+    .describe{
+        margin: 20px;
+    }
+    
+
+    .ganres{
+        text-align: center;
+
+        .ganre{
+            @include main.pill(0px, 5px, 16px, main.$sndCol, main.$themeCol);
+            border-radius: 5px;
+            padding: {
+                top: 1px;
+                bottom: 1px;
+                left: 10px;
+                right: 10px;
+            }
+        }
+    }  
+    
+    .rateBlock{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+
+        .rateMark{
+            display: inline-block;
+            width: 100%;
+            color: gold;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .rateCount{
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .star{
+        color:gold;
+        font-size: 18px;
+    }
+
+    .rate{
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        
+        svg{
+            cursor: pointer;
+            margin: 3px;
+        }
+    }
+
+
+    .priceBlock{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:25%;
+        margin: 20px;
+        justify-items: center;
+        
+        .price, .buy{
+            @include main.pill(10px, 0px, auto, main.$sndCol, main.$themeCol);
+            font-weight: bold;
+        }
+
+        .buy{
+            padding: {
+                left: 30px;
+                right: 30px;
+            }
+            transition-duration: 0.5s;
+            cursor: pointer;
+        }
+
+        .buy:hover{
+            background-color: main.$themeCol;
+            border: 1px solid main.$sndCol;
+            color: main.$sndCol;
+            box-shadow: 0px 0px 10px main.$trdCol;
+        }
+    }
+
+    .authorsBlock{
+        display: grid;
+        grid-template-columns:1fr 10fr 1fr;
+        align-items: center;
+
+        .authors{
+            display: grid;
+            grid-template-columns: repeat(4, 25%);
+            width: 100%;
+            justify-items: center;
+    
+            .author{
+                display: grid;
+                text-overflow: ellipsis;
+                border:2px solid main.$sndCol;
+                background-color: main.$themeCol;
+                color: main.$sndCol;
+                cursor: pointer;
+                width: 90%;
+                height: 250px;
+
+                &:hover{
+                    filter: grayscale(50%);
+                    transform: scale(1.05);
+                    box-shadow: 0 0 50px main.$trdCol;
+                }
+                
+                .imgDiv{
+                    width: 100%;
+                    display: grid;
+                    align-self: end;
+                    background-color: black;
+                    height: 100px;
+                    
+                    img{
+                        align-self: center;
+                        max-height: 100px;
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .write{
+        @include main.search();
+    }
+
+    .post{
+        @include main.arrow-btn(main.$themeCol, main.$sndCol);
+    }
+
+    .closePost{
+        @include main.arrow-btn(main.$sndCol, main.$themeCol);
+    }
+
+    .commentBlock{
+
+        h3{
+            margin: 10px;
+        }
+
+        .comment{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr auto;
+            width: 40%;
+            margin-left: 45px;
+            padding: 10px;
+            border: 3px solid main.$sndCol;
+            border-radius: 0px 20px 20px 20px;
+            background-color: main.$themeCol;
+    
+            .cont{
+                grid-column: 1/3;
+            }
+    
+            .like, .hate{
+                @include main.arrow-btn(main.$sndCol, main.$themeCol);
+                justify-self: center;
+                width: 35px;
+                padding: 3px;
+                text-align: center;
+                user-select: none;
+    
+                &:hover{
+                    @include main.arrow-btn(main.$themeCol, main.$sndCol);
+                    padding: 2px;
+                    box-shadow: 0px 0px 10px main.$trdCol;
+                }
+            }
+        }
+    }
+
+}
+}

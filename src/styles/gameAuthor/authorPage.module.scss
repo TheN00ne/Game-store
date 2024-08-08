@@ -1,0 +1,277 @@
+@use '../main' as main;
+
+@media screen and (min-width: 200px) and (max-width: 767px){
+    .authorPage{
+        display: grid;
+        justify-items: center;
+    }
+    
+    .authorBlock{
+        width: 100vw;
+        display: grid;
+        justify-content: center;
+        border: 2px solid main.$sndCol;
+    
+        hr{
+            background-color: main.$sndCol;
+            height: 2px;
+            width: 100%;
+        }
+    
+        .personBlock{
+            display: grid;
+            justify-items: center;
+            margin: 10px;
+    
+    
+            img{
+                background-position: center;
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+            }
+        }
+    
+        .infoBlock{
+            display: grid;
+            justify-items: center;
+    
+            .asideHeader{
+                justify-self: left;
+                margin-left: 10px;
+            }
+    
+            p{
+                width: 90%;
+            }
+    
+            .projectsBlock{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: auto;
+                gap: 10px;
+                margin: 20px;
+    
+                .game{
+                    display: grid;
+                    background-color: main.$themeCol;
+                    border: 2px solid main.$sndCol;
+                    justify-items: center;
+                    min-height: 150px;
+                    height: auto;
+                    cursor: pointer;
+    
+                    &:hover{
+                        filter: grayscale(50%);
+                        transform: scale(1.05);
+                        box-shadow: 0 0 50px main.$trdCol;
+                    }
+    
+                    .imgDiv{
+                        width: 100%;
+                        display: grid;
+                        align-self: top;
+                        background-color: black;
+                        height: 100px;
+                        
+                        img{
+                            align-self: center;
+                            max-height: 100px;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+    
+                    h3{
+                        text-align: center;
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px){
+    .authorPage{
+        display: grid;
+        justify-items: center;
+    }
+    
+    .authorBlock{
+        width: 50vw;
+        display: grid;
+        justify-content: center;
+        border: 2px solid main.$sndCol;
+    
+        hr{
+            background-color: main.$sndCol;
+            height: 2px;
+            width: 100%;
+        }
+    
+        .personBlock{
+            display: grid;
+            justify-items: center;
+            margin: 10px;
+    
+    
+            img{
+                background-position: center;
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+            }
+        }
+    
+        .infoBlock{
+            display: grid;
+            justify-items: center;
+    
+            .asideHeader{
+                justify-self: left;
+                margin-left: 10px;
+            }
+    
+            p{
+                width: 90%;
+            }
+    
+            .projectsBlock{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: auto;
+                gap: 10px;
+                margin: 20px;
+    
+                .game{
+                    display: grid;
+                    background-color: main.$themeCol;
+                    border: 2px solid main.$sndCol;
+                    justify-items: center;
+                    min-height: 150px;
+                    height: auto;
+                    cursor: pointer;
+    
+                    &:hover{
+                        filter: grayscale(50%);
+                        transform: scale(1.05);
+                        box-shadow: 0 0 50px main.$trdCol;
+                    }
+    
+                    .imgDiv{
+                        width: 100%;
+                        display: grid;
+                        align-self: top;
+                        background-color: black;
+                        height: 100px;
+                        
+                        img{
+                            align-self: center;
+                            max-height: 100px;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+    
+                    h3{
+                        text-align: center;
+                    }
+    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2560px){
+    .authorPage{
+        display: grid;
+        justify-items: center;
+    }
+
+    .authorBlock{
+        display: grid;
+        justify-content: center;
+        border: 2px solid main.$sndCol;
+    
+        hr{
+            background-color: main.$sndCol;
+            height: 2px;
+            width: 100%;
+        }
+    
+        .personBlock{
+            display: grid;
+            justify-items: center;
+            margin: 10px;
+    
+    
+            img{
+                background-position: center;
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+            }
+        }
+    
+        .infoBlock{
+            display: grid;
+            justify-items: center;
+    
+            .asideHeader{
+                justify-self: left;
+                margin-left: 10px;
+            }
+    
+            p{
+                width: 90%;
+                font-size: 20px;
+            }
+
+            .projectsBlock{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: auto;
+                gap: 10px;
+                margin: 20px;
+
+                .game{
+                    display: grid;
+                    background-color: main.$themeCol;
+                    border: 2px solid main.$sndCol;
+                    justify-items: center;
+                    min-height: 150px;
+                    height: auto;
+                    cursor: pointer;
+    
+                    &:hover{
+                        filter: grayscale(50%);
+                        transform: scale(1.05);
+                        box-shadow: 0 0 50px main.$trdCol;
+                    }
+    
+                    .imgDiv{
+                        width: 100%;
+                        display: grid;
+                        align-self: top;
+                        background-color: black;
+                        height: 100px;
+                        
+                        img{
+                            align-self: center;
+                            max-height: 100px;
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+    
+                    h3{
+                        text-align: center;
+                    }
+    
+                }
+            }
+        }
+    }
+}

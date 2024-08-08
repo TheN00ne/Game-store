@@ -1,0 +1,744 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poetsen+One&display=swap");
+* {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.searchPost {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.search {
+  width: 300px;
+  height: 30px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.post {
+  display: inline-block;
+  padding: 8px;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
+}
+
+@media screen and (min-width: 200px) and (max-width: 768px) {
+  .searchBlock {
+    display: grid;
+    justify-content: center;
+    margin: 15px;
+  }
+  .searchBlock details {
+    text-align: center;
+  }
+  .searchBlock details summary {
+    display: inline-block;
+    height: auto;
+    padding: 7px;
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  .searchBlock details summary::marker {
+    content: none;
+  }
+  .searchBlock details summary:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .ganres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 5px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  .ganre, .chosenGanre {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .ganre:hover, .chosenGanre:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .ganre:active, .chosenGanre:active {
+    transition-duration: 0.1s;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #4c02f8;
+  }
+  .ganre {
+    display: inline-block;
+    height: auto;
+    padding: 3px;
+    margin: 0;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.5s;
+  }
+  .chosenGanre {
+    display: inline-block;
+    height: auto;
+    padding: 3px;
+    margin: 0;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.5s;
+  }
+  .gameBlock {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+  }
+  .gameBlock .game {
+    display: grid;
+    justify-self: center;
+    width: auto;
+    min-width: 360px;
+    max-height: 400px;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+  }
+  .gameBlock .game:hover {
+    filter: grayscale(50%);
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .gameBlock .game .mark {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    margin: 2px;
+    color: #4c02f8;
+    background-color: white;
+    border: 1px solid #4c02f8;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    position: absolute;
+    font-family: monospace;
+    justify-self: end;
+  }
+  .gameBlock .game .mark:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .gameBlock .game .mark:hover {
+    transform: scale(1.05);
+    color: black;
+  }
+  .gameBlock .game .imgBlock {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    background-color: black;
+  }
+  .gameBlock .game .imgBlock img {
+    align-self: center;
+    max-height: 200px;
+    height: auto;
+    width: 100%;
+  }
+  .gameBlock .game h2 {
+    font-size: 25px;
+    padding: 10px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gameBlock .game .infoBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-self: end;
+    margin: 10px;
+  }
+  .gameBlock .game .rate, .gameBlock .game .price {
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    margin: 2px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    transition-duration: 0.5s;
+    width: auto;
+    justify-self: center;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .searchBlock {
+    display: grid;
+    justify-content: center;
+    margin: 15px;
+  }
+  .searchBlock details {
+    text-align: center;
+  }
+  .searchBlock details summary {
+    display: inline-block;
+    height: auto;
+    padding: 7px;
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  .searchBlock details summary::marker {
+    content: none;
+  }
+  .searchBlock details summary:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .ganres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 5px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  .ganre, .chosenGanre {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .ganre:hover, .chosenGanre:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .ganre:active, .chosenGanre:active {
+    transition-duration: 0.1s;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #4c02f8;
+  }
+  .ganre {
+    display: inline-block;
+    height: auto;
+    padding: 3px;
+    margin: 0;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.5s;
+  }
+  .chosenGanre {
+    display: inline-block;
+    height: auto;
+    padding: 3px;
+    margin: 0;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.5s;
+  }
+  .gameBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .gameBlock .game {
+    display: grid;
+    justify-self: center;
+    width: auto;
+    min-width: 360px;
+    max-height: 400px;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+  }
+  .gameBlock .game:hover {
+    filter: grayscale(50%);
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .gameBlock .game .mark {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    margin: 2px;
+    color: #4c02f8;
+    background-color: white;
+    border: 1px solid #4c02f8;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    position: absolute;
+    font-family: monospace;
+    justify-self: end;
+  }
+  .gameBlock .game .mark:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .gameBlock .game .mark:hover {
+    transform: scale(1.05);
+    color: black;
+  }
+  .gameBlock .game .imgBlock {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    background-color: black;
+  }
+  .gameBlock .game .imgBlock img {
+    align-self: center;
+    max-height: 200px;
+    height: auto;
+    width: 100%;
+  }
+  .gameBlock .game h2 {
+    font-size: 25px;
+    padding: 10px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gameBlock .game .infoBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-self: end;
+    margin: 10px;
+  }
+  .gameBlock .game .rate, .gameBlock .game .price {
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    margin: 2px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    transition-duration: 0.5s;
+    width: auto;
+    justify-self: center;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .searchBlock {
+    display: grid;
+    justify-content: center;
+    margin: 15px;
+  }
+  .searchBlock details {
+    text-align: center;
+  }
+  .searchBlock details summary {
+    display: inline-block;
+    height: auto;
+    padding: 7px;
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  .searchBlock details summary::marker {
+    content: none;
+  }
+  .searchBlock details summary:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .ganres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 5px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  .ganre, .chosenGanre {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .ganre:hover, .chosenGanre:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .ganre:active, .chosenGanre:active {
+    transition-duration: 0.1s;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #4c02f8;
+  }
+  .ganre {
+    display: inline-block;
+    height: auto;
+    padding: 3px;
+    margin: 0;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.5s;
+  }
+  .chosenGanre {
+    display: inline-block;
+    height: auto;
+    padding: 3px;
+    margin: 0;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.5s;
+  }
+  .gameBlock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .gameBlock .game {
+    display: grid;
+    max-height: 400px;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+  }
+  .gameBlock .game:hover {
+    filter: grayscale(50%);
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .gameBlock .game .mark {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    margin: 2px;
+    color: #4c02f8;
+    background-color: white;
+    border: 1px solid #4c02f8;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    position: absolute;
+    font-family: monospace;
+    justify-self: end;
+  }
+  .gameBlock .game .mark:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .gameBlock .game .mark:hover {
+    transform: scale(1.05);
+    color: black;
+  }
+  .gameBlock .game .imgBlock {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    background-color: black;
+  }
+  .gameBlock .game .imgBlock img {
+    align-self: center;
+    max-height: 200px;
+    height: auto;
+    width: 100%;
+  }
+  .gameBlock .game h2 {
+    font-size: 25px;
+    padding: 10px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gameBlock .game .infoBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-self: end;
+    margin: 10px;
+  }
+  .gameBlock .game .rate, .gameBlock .game .price {
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    margin: 2px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    transition-duration: 0.5s;
+    width: auto;
+    justify-self: center;
+  }
+}
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+  .searchBlock {
+    display: grid;
+    justify-content: center;
+    margin: 15px;
+  }
+  .searchBlock details {
+    text-align: center;
+  }
+  .searchBlock details summary {
+    display: inline-block;
+    height: auto;
+    padding: 7px;
+    margin: 5px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+  }
+  .searchBlock details summary::marker {
+    content: none;
+  }
+  .searchBlock details summary:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .ganres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    row-gap: 5px;
+    -moz-column-gap: 5px;
+         column-gap: 5px;
+  }
+  .ganre, .chosenGanre {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .ganre:hover, .chosenGanre:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .ganre:active, .chosenGanre:active {
+    transition-duration: 0.1s;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #4c02f8;
+  }
+  .ganre {
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    margin: 0;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    transition-duration: 0.5s;
+  }
+  .chosenGanre {
+    display: inline-block;
+    height: auto;
+    padding: 5px;
+    margin: 0;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    transition-duration: 0.5s;
+  }
+  .gameBlock {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+  .gameBlock .game {
+    display: grid;
+    max-height: 400px;
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.25s;
+  }
+  .gameBlock .game:hover {
+    filter: grayscale(50%);
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #4c02f8;
+  }
+  .gameBlock .game .mark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    margin: 2px;
+    color: #4c02f8;
+    background-color: white;
+    border: 1px solid #4c02f8;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    transition-duration: 0.2s;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    position: absolute;
+    font-family: monospace;
+    justify-self: end;
+  }
+  .gameBlock .game .mark:hover {
+    box-shadow: 0px 0px 10px #4c02f8;
+    transform: scale(1.05);
+  }
+  .gameBlock .game .mark:hover {
+    transform: scale(1.05);
+    color: black;
+  }
+  .gameBlock .game .imgBlock {
+    display: grid;
+    height: 200px;
+    width: 100%;
+    background-color: black;
+  }
+  .gameBlock .game .imgBlock img {
+    align-self: center;
+    max-height: 200px;
+    height: auto;
+    width: 100%;
+  }
+  .gameBlock .game h2 {
+    font-size: 25px;
+    padding: 10px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gameBlock .game .infoBlock {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-self: end;
+    margin: 10px;
+  }
+  .gameBlock .game .rate, .gameBlock .game .price {
+    display: inline-block;
+    height: auto;
+    padding: 10px;
+    margin: 2px;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    width: auto;
+    justify-self: center;
+  }
+}/*# sourceMappingURL=games.module.css.map */
